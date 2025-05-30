@@ -31,7 +31,7 @@ present in the GFP/RFP positive cells tagged by genetic tools.
 
 In the note below, we will use "VISp" to specify a region of brain, but it is just a placeholder for any 
 choice of brain region parcellation.
-We will use the term "subclass" to specity cell-type, but it is a placeholder for
+We will use the term "subclass" to specify cell-type, but it is a placeholder for
 cell-type at class, subclass, supercluster or cluster. The tool kit is written in a generalized way 
 to perform analysis in any brain region and cell-type classification levels. But, we 
 have only tested the algorithm in the VISp at subclass level at the time of writing.
@@ -41,9 +41,9 @@ have only tested the algorithm in the VISp at subclass level at the time of writ
 \subsection{Notation}
 
 Let $\mathbf{x}=(x, y, z)$ be the three-dimensional CCF coordinates in the VISp area.  The brain slices 
-are labelled by constant $z$ values.  Let $S$ be the set of subclasses present in VISp area, and let 
+are labeled by constant $z$ values.  Let $S$ be the set of subclasses present in VISp area, and let 
 $N$ be the size of this set of subclasses. That is, for VISp, $S =$ \{L6 CT CTX Glut, Pvalb Gaba,$\ldots$\} 
-witb 28 other subclasses in the set. Note that this information on cell-type is infered from the MERFISH cell data.
+with 28 other subclasses in the set. Note that this information on cell-type is inferred from the MERFISH cell data.
 
 Next, we have the GFP/RFP positive cells tagged by a gene tool. 
 Let $K$ be the target specificity of the gene tool. Either one knows
@@ -52,7 +52,7 @@ knows a prior distribution over $K$ for gene tools used. For now,
 we assume that the value of $K$ is known, and later we will use
 prior knowledge that $K$ is small. Given the value of $K$, there
 are $\binom{N}{K}$ subclass combinations possible.
-Let ${\cal K}$ is the set of these $\binom{N}{K}$ subclasse $K$-plets, and
+Let ${\cal K}$ is the set of these $\binom{N}{K}$ subclasses $K$-plets, and
 let its members be $k$. These $K$-plets $k$ are, for example,
 such as $k_1 =$ (Oligo, Astro, Sst Gaba), $k_2=$(L5 ET CTX Glut, Sncg Gaba, Microglia NN), etc., for 
 $K=3$.
@@ -85,13 +85,13 @@ Let $Q_{\rm GFP}(\mathbf{x})$ be the spatial distribution of GFP/RFP cells. If o
 image of GFP/RFP cells, and one knew with 100\% confidence which were GFP/RFP cells versus the background, 
 then we can still describe the cells through a distribution $Q_{\rm GFP}(\mathbf{x})$ that are non-zero only 
 at exact locations of the GFP cells. In general, this is not the case, and we take the approach to assign 
-only a continous spatial distribution $Q_{\rm GFP}(\mathbf{x})$ that there is a GFP/RFP cell at various $\mathbf{x}$.
+only a continuous spatial distribution $Q_{\rm GFP}(\mathbf{x})$ that there is a GFP/RFP cell at various $\mathbf{x}$.
 We will define our procedure to assign $Q_{\rm GFP}(\mathbf{x})$ based on intensity distribution later in this note.
 
 \subsection{Mathematical statement of the algorithm}
 The basis of our algorithm is the following.  Given $Q_{\rm GFP}(\mathbf{x})$ of the GFP/RFP cells via the STPT images 
 of the brain, given a spatially smooth distribution $P(s|x)$ of the celltypes inferred from MERFISH data, and 
-given thet the gene tool can tag only certain cell types from $K$-plets $k$ all over VISp, we find the single best $K$-plet $k$ 
+given that the gene tool can tag only certain cell types from $K$-plets $k$ all over VISp, we find the single best $K$-plet $k$ 
 whose $q(\mathbf{x}|k)$ is the most similar to $Q_{\rm GFP}(\mathbf{x})$.
 
 Such a measure of similarity between two probability distributions $p$ and $q$ is given by the cross-entropy ${\cal H}(p,q)$ which is a minimum only if $p=q$. For our case, we want to find $k$ such that 
@@ -194,10 +194,10 @@ To avoid bias and to avoid sampling from $z$-slices that were dimmer
 compared to other areas of VISp, we placed a uniform global threshold
 $\bar I_{\rm thresh} = {\rm Median}( I_{\rm thresh}(z) )$. 
 Furthermore,
-to accomodate left-right asymmetry in some STPT samples, we allowed 
+to accommodate left-right asymmetry in some STPT samples, we allowed 
 left-right dependence of this global $\bar I_{\rm thresh}$. 
 We subtracted this left-right specific global thresholds from all the voxels, 
-and set any substracted intensity less than 0 to be 0.
+and set any subtracted intensity less than 0 to be 0.
 Since
 we did not wish to have few outlier bright GFP/RFP cells to 
 be weighted more in our analysis, we placed an upper cutoff of 
@@ -205,8 +205,8 @@ $2000$ on the threshold subtracted voxel intensities.
 
 \subsubsection{Constructing GFP spatial probability distribution}
 After the above
-thresholding procedure, let these new substracted intensities be 
-$I_{\rm subtracted}(\mathbf{x})$ at varous CCF coordinates/voxels $x$. We constructed a 
+thresholding procedure, let these new subtracted intensities be 
+$I_{\rm subtracted}(\mathbf{x})$ at various CCF coordinates/voxels $x$. We constructed a 
 probability distribution $Q_{\rm GFP}(\mathbf{x})$ to find a GFP cell at $\mathbf{x}$ as 
 \beq
 Q_{\rm GFP}(\mathbf{x}) \equiv \frac{I_{\rm subtracted}(\mathbf{x})}{ \sum_{\mathbf{x'}\in \text{VISp}} I_{\rm subtracted}(\mathbf{x'}) }. 
@@ -245,12 +245,12 @@ As we noted, there are $\binom{N}{K}$ choices for $K$-plets $k$
 that we assume the gene pool can potentially target. The number of
 such $K$-plets become large for $K\ge 4$ even for $N=28$, and hence
 not feasible to find the value of ${\cal H}(k)$ for all of them.
-Therefore, we follow a heurestic procedure to include only the
+Therefore, we follow a heuristic procedure to include only the
 top-15 subclasses ordered by their cross-entropies (the above
 equation with $K=1$) as an effective upper cutoff on $N$, and allow
 only $K$-plets formed out of these top-15 subclasses.  We sort the
 values of ${\cal H}(k)$, and find the best possible $K$-plet $k^*$
-which mininizes ${\cal H}$.
+which minimizes ${\cal H}$.
 
 \subsubsection{Computing cell fractions $f_s$}
 We find the fractions of celltypes $s$ that are contained with the
