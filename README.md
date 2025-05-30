@@ -11,17 +11,18 @@ The technical details of the algorithm are present in <a href="https://github.co
 
 <h2> Setting started </h2>
 
-<p> Download this code suite to your local machine. Using terminal, move to the code's folder. It is recommended that 
-conda virtual environment <code>GT2CT</code> created and used for the installation of required packages. To do this, 
-execute the following command</p>
-
+<p> Download this code suite to your local machine and move to code folder: <br> 
+<code> git clone https://github.com/astronikil/GT2CT.git </code><br>
+<code> cd GT2CT </code><br>
+Create a conda virtual
+environment <code>GT2CT</code> for the installation
+of required packages in <code>requirements.yml</code>. 
+To do this, execute the following command:<br>
 <code> conda env create -p ./GT2CT -f requirements.yml </code> <br>
-
-Once this is done, activate the virtual environment as 
-
+Once this is done, activate the virtual environment as <br>
 <code> conda activate ./GT2CT </code> <br>
 
-Then, you can use <code> jupyter notebook</code> and open the main analysis
-notebook <code>main.ipynb</code>.
+Then, you can open the jupyter notebook  <code>main.ipynb</code>
+containing the algorithm.
 
 
