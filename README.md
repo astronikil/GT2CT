@@ -3,7 +3,7 @@
 </code>GT2CT Bayesian Mapper</code> is a Python-based toolkit designed to estimate
 the probable fractions of various mouse-brain transcriptomic cell types (CT) within populations of 
 GFP/RFP-positive cells tagged by genetic tools (GT). It is capable of analyzing the GFP/RFP data at
-class, subclass, supercluster, or cluster hiararchical classification levels
+class, subclass, supercluster, or cluster hiararchical classification levels.
 See the image below for an algorithm schematic.
 </p>
 
