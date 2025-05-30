@@ -1,7 +1,7 @@
 #
 
 GT2CT/
-./brain_data/*
+brain_data/*
 challenge/WORKDIR/*
 __pycache__/
 
