@@ -13,9 +13,8 @@ The technical details of the algorithm are present in <a href="https://github.co
 
 <p> Download this code suite to your local machine and move to code folder:</p>
 <code> git clone https://github.com/astronikil/GT2CT.git </code><br>
-<code> cd GT2CT </code><br>
-<p>
-Install the required packages by using a conda virtual environment <code>GT2CT</code> 
+<code> cd GT2CT </code>
+<p> Install the required packages by using a conda virtual environment <code>GT2CT</code> 
 using the command:</p>
 <code> conda env create -p ./GT2CT -f requirements.yml </code>
 <p> Once this is done, activate the virtual environment as:</p>
