@@ -1,10 +1,10 @@
 <h1> Genetic Tool to Cell Type Bayesian Mapper (GT2CT Bayesian Mapper) </h1>
 <p> 
-GT2CT Bayesian Mapper is a Python-based toolkit designed to estimate
-the probable fractions of various brain cell types (e.g., class,
-subclass, supercluster, or cluster) within GFP/RFP-positive cells
-identified by genetic tools. See the image below for an algorithm
-schematic.
+</code>GT2CT Bayesian Mapper</code> is a Python-based toolkit designed to estimate
+the probable fractions of various mouse-brain transcriptomic cell types (CT) within populations of 
+GFP/RFP-positive cells tagged by genetic tools (GT). It is capable of analyzing the GFP/RFP data at
+class, subclass, supercluster, or cluster hiararchical classification levels
+See the image below for an algorithm schematic.
 </p>
 
 ![alt text](https://github.com/astronikil/GT2CT/blob/main/images/schematic.png)
