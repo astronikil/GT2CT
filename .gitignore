@@ -3,6 +3,8 @@ GT2CT/
 brain_data/*
 challenge/WORKDIR/*
 __pycache__/
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
 
 
 # Compiled source #
